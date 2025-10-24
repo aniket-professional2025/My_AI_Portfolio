@@ -122,8 +122,8 @@ export default function Education() {
 
       {/* Additional Skills/Certifications Note */}
       <div className="mt-12 text-center bg-yellow-300 bg-opacity-10 rounded-2xl p-6 backdrop-blur-sm">
-        <p className="text-white text-lg">
-          <span className="text-yellow-300 font-bold">Academic Excellence:</span> Consistently maintained
+        <p className="text-black text-lg">
+          <span className="text-black-300 font-bold">Academic Excellence:</span> Consistently maintained
           high academic performance while actively participating in research projects, hackathons, and
           technical competitions throughout my educational journey.
         </p>
