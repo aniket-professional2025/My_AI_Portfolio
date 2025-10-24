@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Linkedin, Github, Send } from 'lucide-react';
 
+// Configuration for EmailJS
+// !!! IMPORTANT: Replace these placeholders with your actual EmailJS IDs !!!
+const SERVICE_ID = 'service_c85amjb'; // Your EmailJS Service ID
+const TEMPLATE_ID = 'template_m8yfvdd'; // Your EmailJS Template ID
+const PUBLIC_KEY = 'QO6TqjKXvVdEI8lDP'; // Your EmailJS Public Key (User ID)
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
@@ -11,41 +17,71 @@ export default function Contact() {
 
   // Replace these with your actual details
   const contactInfo = {
-    email: 'your.professional.email@example.com',
-    phone: '+1 (555) 123-4567',
-    location: 'San Francisco, CA',
-    linkedin: 'https://linkedin.com/in/yourprofile',
-    github: 'https://github.com/yourusername',
+    email: 'aniket.chakraborty2001@gmail.com',
+    phone: '+91 9163839603',
+    location: 'Kolkata, West Bengal, India',
+    linkedin: 'www.linkedin.com/in/aniket-chakraborty20022001',
+    github: 'https://github.com/aniket-professional2025',
   };
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    if (!formData.name || !formData.email || !formData.message) {
+      setFormStatus('error');
+      return;
+    }
+
     setFormStatus('sending');
 
-    // NOTE: This is a front-end only simulation.
-    // In a real application, you would replace this setTimeout
-    // with a POST request to a backend service (e.g., Firebase Functions, Formspree, AWS Lambda)
-    
-    setTimeout(() => {
-      // Simulate success or failure
-      if (formData.name && formData.email && formData.message) {
+    const emailData = {
+      service_id: SERVICE_ID,
+      template_id: TEMPLATE_ID,
+      user_id: PUBLIC_KEY,
+      template_params: {
+        // Keys here must match the variables defined in your EmailJS template
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+      },
+    };
+
+    try {
+      const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(emailData)
+      });
+
+      if (response.status === 200) {
         setFormStatus('success');
-        // Clear form after successful submission
-        setFormData({ name: '', email: '', message: '' });
+        setFormData({ name: '', email: '', message: '' }); // Clear form
       } else {
+        // Try to parse error message if available
+        const errorText = await response.text();
+        console.error('EmailJS Error Response:', errorText);
         setFormStatus('error');
       }
-    }, 1500); 
+    } catch (error) {
+      console.error('Submission failed:', error);
+      setFormStatus('error');
+    }
   };
 
   return (
-    <div className="container mx-auto px-4 py-12 max-w-7xl animate-fadeIn">
+    <div className="container mx-auto px-4 py-12 max-w-7xl animate-fadeIn" style={{fontFamily: 'Inter, sans-serif'}}>
+      <style>{`
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fadeIn { animation: fadeIn 0.8s ease-out forwards; }
+        .animate-slideUp { animation: slideUp 0.6s ease-out forwards; }
+      `}</style>
       <h2 className="text-5xl font-bold text-yellow-300 text-center mb-4 animate-slideUp">
-      Let Connect
+        Let Connect
       </h2>
       <p className="text-white text-xl text-center mb-12">
         I’m currently open to new opportunities. Reach out for collaboration or just to say hello!
@@ -141,7 +177,13 @@ export default function Contact() {
               className="w-full md:w-auto flex items-center justify-center px-6 py-3 bg-yellow-300 text-purple-900 font-bold rounded-xl shadow-lg transition-all duration-300 hover:bg-yellow-400 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {formStatus === 'sending' ? (
-                'Sending...'
+                <>
+                  <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-purple-900" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  Sending...
+                </>
               ) : (
                 <>
                   Send Message <Send className="ml-2 h-5 w-5" />
@@ -152,12 +194,12 @@ export default function Contact() {
             {/* Status Feedback */}
             {formStatus === 'success' && (
               <p className="mt-4 p-3 bg-green-500/20 text-green-300 rounded-xl animate-fadeIn">
-                Thank you for your message! I will get back to you shortly.
+                Thank you for your message! It has been sent successfully. I will get back to you shortly.
               </p>
             )}
             {formStatus === 'error' && (
               <p className="mt-4 p-3 bg-red-500/20 text-red-300 rounded-xl animate-fadeIn">
-                Oops! There was an error submitting the form. Please ensure all fields are filled, or contact me directly via email.
+                Oops! There was an error submitting the form. Please check your network connection or ensure all fields are filled.
               </p>
             )}
           </form>

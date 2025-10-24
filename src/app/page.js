@@ -1,6 +1,7 @@
 "use client"
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X } from 'lucide-react';
+import lottie from 'lottie-web';
 
 // Import all the new page components
 import Home from '@/components/Home';
@@ -15,12 +16,30 @@ export default function Portfolio() {
   const [showWelcome, setShowWelcome] = useState(true);
   const [activeSection, setActiveSection] = useState('home');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const lottieContainer = useRef(null);
 
-  // Welcome Timer useEffect
+  // Lottie Animation useEffect
+  useEffect(() => {
+    if (showWelcome && lottieContainer.current) {
+      const animation = lottie.loadAnimation({
+        container: lottieContainer.current,
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: '/animations/THNOkGgv3C.json'
+      });
+
+      return () => {
+        animation.destroy();
+      };
+    }
+  }, [showWelcome]);
+
+  // Welcome Timer useEffect - Changed to 7 seconds
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowWelcome(false);
-    }, 3000);
+    }, 7000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -64,20 +83,32 @@ export default function Portfolio() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-900 via-purple-700 to-purple-500 relative overflow-hidden">
-      {/* Welcome Animation Overlay */}
+      {/* Welcome Animation Overlay with Lottie */}
       {showWelcome && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-purple-900 via-purple-700 to-purple-500 animate-fadeIn">
           <div className="text-center space-y-6 animate-slideUp">
+            {/* Lottie Animation Container */}
+            <div 
+              ref={lottieContainer} 
+              className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 mx-auto"
+            ></div>
+            
+            {/* Welcome Text */}
             <h1 className="text-6xl md:text-8xl font-bold text-yellow-300 animate-pulse">
               Welcome
             </h1>
             <p className="text-2xl md:text-4xl text-white font-light">
               To My Portfolio
             </p>
+            
+            {/* Loading Dots Animation */}
             <div className="flex justify-center space-x-2 mt-8">
               <div className="w-3 h-3 bg-yellow-300 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
               <div className="w-3 h-3 bg-yellow-300 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
               <div className="w-3 h-3 bg-yellow-300 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+              <div className="w-3 h-3 bg-yellow-300 rounded-full animate-bounce" style={{ animationDelay: '450ms' }}></div>
+              <div className="w-3 h-3 bg-yellow-300 rounded-full animate-bounce" style={{ animationDelay: '600ms' }}></div>
+              <div className="w-3 h-3 bg-yellow-300 rounded-full animate-bounce" style={{ animationDelay: '750ms' }}></div>
             </div>
           </div>
         </div>
@@ -92,7 +123,7 @@ export default function Portfolio() {
               <div className="flex items-center justify-between">
                 {/* Logo/Brand */}
                 <div className="text-2xl font-bold text-yellow-300 cursor-pointer" onClick={() => handleNavClick('home')}>
-                  Aniket Chakraborty
+                  Aniket AI
                 </div>
 
                 {/* Desktop Navigation */}
