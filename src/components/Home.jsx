@@ -1,12 +1,13 @@
+// Home Component: New Code
 import React from 'react';
 import { Briefcase, MapPin } from 'lucide-react';
 
 export default function Home({ handleNavClick }) {
   return (
     <div className="min-h-screen flex items-center justify-center px-4">
-      <div className="text-center space-y-8 animate-slideUp">
+      <div className="text-center space-y-8">
         <h1 className="text-5xl md:text-7xl font-bold text-yellow-300 leading-tight">
-          Hi, I'm an AI/ML Professional
+          Hi, I am an AI/ML Professional
         </h1>
         <p className="text-2xl md:text-3xl text-white font-light">
           Developer | Researcher | Engineer

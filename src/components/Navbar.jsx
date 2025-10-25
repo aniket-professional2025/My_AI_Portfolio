@@ -1,27 +1,31 @@
+// Navbar Component: New Code
+
 "use client";
 import React from 'react';
 import { Menu, X } from 'lucide-react';
 
-export default function Navbar({
-  navItems,
-  activeSection,
-  handleNavClick,
-  mobileMenuOpen,
-  setMobileMenuOpen
-}) {
+export default function Navbar({ activeSection, handleNavClick, mobileMenuOpen, setMobileMenuOpen }) {
+  const navItems = [
+    { id: 'home', label: 'Home' },
+    { id: 'about', label: 'About Me' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'education', label: 'Education' },
+    { id: 'internship', label: 'Internship' },
+    { id: 'certificates', label: 'Certificates' },
+    { id: 'contact', label: 'Contact' }
+  ];
+
   return (
     <nav className="fixed top-0 right-0 left-0 z-40 bg-purple-900 bg-opacity-90 backdrop-blur-sm shadow-lg">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo/Brand */}
           <div
             className="text-2xl font-bold text-yellow-300 cursor-pointer"
             onClick={() => handleNavClick('home')}
           >
-            Aniket AI
+            A(I)niket
           </div>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => (
               <button
@@ -38,7 +42,6 @@ export default function Navbar({
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden text-yellow-300 hover:text-white transition-colors"
@@ -47,9 +50,8 @@ export default function Navbar({
           </button>
         </div>
 
-        {/* Mobile Navigation Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 animate-slideDown">
+          <div className="md:hidden mt-4 pb-4">
             <div className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 <button
