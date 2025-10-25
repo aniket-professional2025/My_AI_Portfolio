@@ -1,4 +1,4 @@
-// Projects Component
+// Projects Component: New Code
 
 import React from 'react';
 import { Brain, Code, Cpu } from 'lucide-react';

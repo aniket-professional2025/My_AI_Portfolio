@@ -1,4 +1,5 @@
 // Home Component: New Code
+
 import React from 'react';
 import { Briefcase, MapPin } from 'lucide-react';
 

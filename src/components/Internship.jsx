@@ -1,4 +1,5 @@
 // Internship Component: New code
+
 import React from 'react';
 import { Briefcase, MapPin } from 'lucide-react';
 

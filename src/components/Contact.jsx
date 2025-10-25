@@ -1,4 +1,5 @@
 // Contact Component: New code
+
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Linkedin, Github, Send } from 'lucide-react';
 
