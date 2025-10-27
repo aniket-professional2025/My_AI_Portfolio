@@ -101,7 +101,7 @@ export default function Portfolio() {
 
             {/* Welcome Text */}
             <h1 className="text-6xl md:text-8xl font-bold text-yellow-300 animate-pulse">Welcome</h1>
-            <p className="text-2xl md:text-4xl text-white font-light">To Aniket's Tech Space</p>
+            <p className="text-2xl md:text-4xl text-white font-light">To Anexus</p>
 
             {/* Animated Dots */}
             <div className="flex justify-center items-center space-x-3 pt-6">
