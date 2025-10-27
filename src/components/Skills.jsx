@@ -57,7 +57,7 @@ export default function Skills() {
           {MARQUEE_SKILLS.map((skill, index) => (
             <div
               key={index}
-              className="shrink-0 w-32 h-32 md:w-40 md:h-40 mx-4 flex flex-col items-center justify-center p-4 bg-purple-800/40 rounded-xl shadow-xl transition-all duration-300 relative cursor-pointer group hover:bg-purple-700/60"
+              className="shrink-0 w-32 h-32 md:w-40 md:h-40 mx-4 flex flex-col items-center justify-center p-4 bg-gray-800/40 rounded-xl shadow-xl transition-all duration-300 relative cursor-pointer group hover:bg-purple-700/60"
               onMouseEnter={() => setHoveredSkill(skill.name)}
               onMouseLeave={() => setHoveredSkill(null)}
             >
