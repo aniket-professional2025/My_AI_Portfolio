@@ -66,7 +66,7 @@ export default function Portfolio() {
   }, [showWelcome]);
 
   const handleNavClick = (sectionId) => {
-    setMobileMenuOpen(false);
+  //   setMobileMenuOpen(false);
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -101,7 +101,7 @@ export default function Portfolio() {
 
             {/* Welcome Text */}
             <h1 className="text-6xl md:text-8xl font-bold text-yellow-300 animate-pulse">Welcome</h1>
-            <p className="text-2xl md:text-4xl text-white font-light">To My Portfolio</p>
+            <p className="text-2xl md:text-4xl text-white font-light">To Aniket's Tech Space</p>
 
             {/* Animated Dots */}
             <div className="flex justify-center items-center space-x-3 pt-6">
