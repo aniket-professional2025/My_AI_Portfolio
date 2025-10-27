@@ -8,6 +8,7 @@ export default function Navbar({ activeSection, handleNavClick, mobileMenuOpen, 
   const navItems = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About Me' },
+    { id: 'skills', label: 'My Skills'},
     { id: 'projects', label: 'Projects' },
     { id: 'education', label: 'Education' },
     { id: 'internship', label: 'Internship' },
