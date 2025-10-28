@@ -26,6 +26,7 @@ const SKILLS = [
   { name: "Cassandra", icon: "/icons/cassandra.png" },
   { name: "Prometheus", icon: "/icons/prometheus.png" },
   { name: "Kafka", icon: "/icons/kafka.png" },
+  { name: "Langchain", icon: "/icons/Langchain.png"}
 ];
 
 // Duplicate the array to ensure seamless looping for the marquee effect
