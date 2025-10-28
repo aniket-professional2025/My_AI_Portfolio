@@ -54,7 +54,7 @@ export default function Skills() {
           {MARQUEE_SKILLS.map((skill, index) => (
             <div
               key={index}
-              className="shrink-0 w-36 h-36 md:w-44 md:h-44 mx-4 flex flex-col items-center justify-center p-5 bg-gradient-to-br from-gray-800/40 to-gray-900/40 rounded-2xl shadow-2xl transition-all duration-500 relative cursor-pointer group hover:scale-110 hover:shadow-yellow-300/30 hover:from-purple-700/60 hover:to-purple-800/60"
+              className="shrink-0 w-36 h-36 md:w-44 md:h-44 mx-4 flex flex-col items-center justify-center p-5 bg-linear-to-br from-gray-800/40 to-gray-900/40 rounded-2xl shadow-2xl transition-all duration-500 relative cursor-pointer group hover:scale-110 hover:shadow-yellow-300/30 hover:from-purple-700/60 hover:to-purple-800/60"
               onMouseEnter={() => setHoveredSkill(skill.name)}
               onMouseLeave={() => setHoveredSkill(null)}
             >
@@ -78,7 +78,7 @@ export default function Skills() {
 
               {/* Skill Name Overlay with Smooth Animation */}
               <div 
-                className={`absolute inset-0 bg-gradient-to-br from-purple-900/98 to-purple-800/98 flex items-center justify-center rounded-2xl transition-all duration-500 backdrop-blur-sm ${
+                className={`absolute inset-0 bg-linear-to-br from-purple-900/98 to-purple-800/98 flex items-center justify-center rounded-2xl transition-all duration-500 backdrop-blur-sm ${
                   hoveredSkill === skill.name 
                     ? 'opacity-100 scale-100' 
                     : 'opacity-0 scale-95 pointer-events-none'
@@ -110,7 +110,7 @@ export default function Skills() {
         }
 
         .animate-marquee {
-          animation: scroll 40s linear infinite;
+          animation: scroll 60s linear infinite;
         }
 
         @keyframes shake {
