@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { Briefcase, MapPin, Code, Brain, Cpu } from 'lucide-react';
-import Image from "next/image";
 
 export default function About() {
   return (
@@ -17,16 +16,12 @@ export default function About() {
           {/* Animated Ring */}
           <div className="absolute inset-0 rounded-full bg-linear-to-r from-yellow-300 via-purple-400 to-yellow-300 animate-spin-slow opacity-75 blur-md group-hover:opacity-100 transition-opacity duration-300"></div>
           
-          {/* Profile Picture Container */ }
+          {/* Profile Picture Container */}
           <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-yellow-300 shadow-2xl transform group-hover:scale-105 transition-transform duration-300">
-            <Image
+            <img
               src="https://raw.githubusercontent.com/aniket-professional2025/aniket-professional2025/main/My_Portfolio_Picture.png" 
               alt="Profile" 
-              fill // fills the parent container (w-48 h-48)
-              sizes="192px" // optional: informs browser about expected display size
-              classname="object-cover"
-              priority // loads early for better LCP
-              //className="w-full h-full object-cover"
+              className="w-full h-full object-cover"
             />
           </div>
         </div>
