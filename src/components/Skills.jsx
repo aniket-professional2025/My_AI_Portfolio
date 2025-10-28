@@ -14,7 +14,7 @@ const SKILLS = [
   { name: "Scikit-learn", icon: "/icons/scikit-learn.png" },
   { name: "OpenCV", icon: "/icons/OpenCV.png" },
   { name: "PIL", icon: "/icons/Pillow Logo.png" },
-  { name: "Tensorflow", icon: "/icons/Tensorflow.png" },
+  { name: "Tensorflow", icon: "/icons/TensorFlow.png" },
   { name: "Streamlit", icon: "/icons/Streamlit.png" },
   { name: "Pytorch", icon: "/icons/Pytorch.png" },
   { name: "MSSQL", icon: "/icons/mssql.png" },
