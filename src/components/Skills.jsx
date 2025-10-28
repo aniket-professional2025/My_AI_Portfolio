@@ -1,6 +1,5 @@
 // The new Skills Section
 
-
 import React, { useState } from 'react';
 
 // Define the skills with their PNG icon paths
