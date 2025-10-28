@@ -1,6 +1,7 @@
 // Skills Section — Infinite Floating Marquee (Fixed Full Loop)
 
 import React, { useState } from "react";
+import Image from "next/image";
 
 const SKILLS = [
   { name: "Python", icon: "/icons/python.png" },
@@ -63,14 +64,23 @@ export default function Skills() {
               onMouseEnter={() => setHoveredSkill(skill.name)}
               onMouseLeave={() => setHoveredSkill(null)}
             >
-              <img
+  
+            <Image
                 src={skill.icon}
                 alt={skill.name}
                 title={skill.name}
-                className="animate-float w-16 h-16 md:w-20 md:h-20 object-contain 
-                           transition-transform duration-300 hover:scale-125 
-                           brightness-125 drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]"
-              />
+                // The Next.js Image component requires explicit width and height
+                // You need to set the desired dimensions for optimization:
+                width={80} // Corresponds to md:w-20 (80px in Tailwind's default scale)
+                height={80} // Corresponds to md:h-20
+                
+                // To apply Tailwind CSS for hover/animation effects, use the 'className'
+                className="animate-float object-contain transition-transform duration-300 hover:scale-125 
+                          brightness-125 drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] 
+                          /* 💡 Re-apply your size classes if you want smaller sizes on mobile */
+                          w-16 h-16 md:w-20 md:h-20" 
+            />
+
               {hoveredSkill === skill.name && (
                 <span className="text-yellow-300 text-sm mt-2 animate-fadeIn font-semibold">
                   {skill.name}
@@ -94,7 +104,7 @@ export default function Skills() {
         }
 
         .animate-marquee {
-          animation: scroll 40s linear infinite;
+          animation: scroll 60s linear infinite;
         }
 
         /* Floating up-down motion */
@@ -103,7 +113,7 @@ export default function Skills() {
           50% { transform: translateY(-12px); }
         }
         .animate-float {
-          animation: float 3s ease-in-out infinite;
+          animation: float 5s ease-in-out infinite;
         }
 
         /* Fade-in label */
