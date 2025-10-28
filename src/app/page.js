@@ -68,7 +68,7 @@ export default function Portfolio() {
             setMobileMenuOpen={setMobileMenuOpen}
           />
 
-          <section id="home" className="min-h-screen">
+          <section id="home" className="h-[90vh] pt-20"> 
             <Home handleNavClick={handleNavClick} />
           </section>
 

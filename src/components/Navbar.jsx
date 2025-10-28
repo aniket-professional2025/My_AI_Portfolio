@@ -1,4 +1,4 @@
-// Navbar Component: Responsive Drawer for Mobile Only
+// Navbar Component: Responsive Drawer for Mobile Only with Glassmorphism
 
 "use client";
 import React from 'react';
@@ -27,27 +27,31 @@ export default function Navbar({ activeSection, handleNavClick, mobileMenuOpen, 
           A(I)niket
         </div>
 
-        {/* ✅ Desktop Navigation (visible from md breakpoint) */}
-        <div className="hidden md:flex items-center gap-6">
+        {/* ✅ Desktop Navigation with Glassmorphism (visible from md breakpoint) */}
+        <div className="hidden md:flex items-center gap-6 px-6 py-3 rounded-2xl bg-purple-500 bg-opacity-10 backdrop-blur-md border border-purple-400 border-opacity-30 shadow-x1">
           {navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => handleNavClick(item.id)}
               className={`relative text-lg font-medium whitespace-nowrap group ${
-                activeSection === item.id ? 'text-yellow-300' : 'text-white'
+                activeSection === item.id ? 'text-yellow-400' : 'text-white-200'
               }`}
             >
-              <span className="relative inline-block transition-colors duration-300 group-hover:text-yellow-300">
+              <span className="relative inline-block transition-all duration-300 group-hover:text-yellow-300" style={{ 
+                filter: 'blur(0.3px)', 
+                textShadow: '0 0 12px rgba(255, 255, 255, 0.6), 0 0 3px rgba(255, 255, 255, 0.4)',
+                WebkitFontSmoothing: 'antialiased'
+              }}>
                 {item.label}
               </span>
 
               {/* Active underline */}
               {activeSection === item.id && (
-                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-yellow-300"></span>
+                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-yellow-300 shadow-lg shadow-yellow-300"></span>
               )}
 
               {/* Hover underline */}
-              <span className="absolute -bottom-1 left-1/2 w-0 h-0.5 bg-yellow-300 transition-all duration-300 ease-out group-hover:w-full group-hover:left-0"></span>
+              <span className="absolute -bottom-1 left-1/2 w-0 h-0.5 bg-yellow-300 transition-all duration-300 ease-out group-hover:w-full group-hover:left-0 shadow-lg shadow-yellow-300"></span>
             </button>
           ))}
         </div>
@@ -62,13 +66,13 @@ export default function Navbar({ activeSection, handleNavClick, mobileMenuOpen, 
         </button>
       </div>
 
-      {/* ✅ Mobile Menu (only visible below md) */}
+      {/* ✅ Mobile Menu with Glassmorphism (only visible below md) */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${
           mobileMenuOpen ? 'max-h-[500px] opacity-100 mt-2' : 'max-h-0 opacity-0 mt-0'
         }`}
       >
-        <div className="flex flex-col space-y-2 pb-4 px-4">
+        <div className="flex flex-col space-y-2 pb-4 px-4 mx-4 rounded-2xl bg-purple-800 bg-opacity-20 backdrop-blur-md border border-purple-400 border-opacity-30 shadow-xl">
           {navItems.map((item) => (
             <button
               key={item.id}
@@ -76,11 +80,16 @@ export default function Navbar({ activeSection, handleNavClick, mobileMenuOpen, 
                 handleNavClick(item.id);
                 setMobileMenuOpen(false);
               }}
-              className={`text-lg font-medium text-left py-2 rounded transition-all duration-300 ${
+              className={`text-lg font-medium text-left py-2 px-3 rounded-lg transition-all duration-300 ${
                 activeSection === item.id
-                  ? 'text-yellow-300 bg-purple-800'
-                  : 'text-white hover:bg-purple-800 hover:text-yellow-300'
+                  ? 'text-yellow-300 bg-purple-700 bg-opacity-30'
+                  : 'text-white hover:bg-purple-700 hover:bg-opacity-25 hover:text-yellow-300'
               }`}
+              style={{ 
+                filter: 'blur(0.5px)', 
+                textShadow: '0 0 12px rgba(255, 255, 255, 0.6), 0 0 3px rgba(255, 255, 255, 0.4)',
+                WebkitFontSmoothing: 'antialiased'
+              }}
             >
               {item.label}
             </button>
