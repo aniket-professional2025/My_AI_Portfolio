@@ -17,7 +17,7 @@ export default function Navbar({ activeSection, handleNavClick, mobileMenuOpen, 
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-40 bg-purple-900 bg-opacity-90 backdrop-blur-sm shadow-lg">
+    <nav className="fixed top-0 left-0 right-0 z-40 bg-purple-700 bg-opacity-90 backdrop-blur-sm shadow-lg">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
         <div
