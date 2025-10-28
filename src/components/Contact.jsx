@@ -9,8 +9,12 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Simulate API call success
     setFormStatus('success');
     setFormData({ name: '', email: '', message: '' });
+
+    // Reset status after a delay
+    setTimeout(() => setFormStatus(null), 5000);
   };
 
   return (
@@ -24,13 +28,14 @@ export default function Contact() {
 
       <div className="grid lg:grid-cols-3 gap-10">
         <div className="lg:col-span-1 space-y-6">
+          {/* Contact Info Items */}
           <div className="flex items-center space-x-4 bg-purple-900 bg-opacity-70 p-4 rounded-xl">
             <div className="bg-yellow-300 p-3 rounded-full">
               <Mail className="text-purple-900" />
             </div>
             <div>
-              <h4 className="text-xl font-semibold text-yellow-300">Email</h4>
-              <p className="text-gray-200">aniket.chakraborty@example.com</p>
+              <p className="text-white font-semibold">Email</p>
+              <a href="mailto:aniket.mandal@example.com" className="text-gray-300 hover:text-yellow-300 transition-colors cursor-pointer">aniket.mandal@example.com</a>
             </div>
           </div>
           <div className="flex items-center space-x-4 bg-purple-900 bg-opacity-70 p-4 rounded-xl">
@@ -38,17 +43,48 @@ export default function Contact() {
               <Phone className="text-purple-900" />
             </div>
             <div>
-              <h4 className="text-xl font-semibold text-yellow-300">Phone</h4>
-              <p className="text-gray-200">+91 9163839603</p>
+              <p className="text-white font-semibold">Phone</p>
+              <a href="tel:+91-12345-67890" className="text-gray-300 hover:text-yellow-300 transition-colors cursor-pointer">+91-12345-67890</a>
             </div>
+          </div>
+          <div className="flex items-center space-x-4 bg-purple-900 bg-opacity-70 p-4 rounded-xl">
+            <div className="bg-yellow-300 p-3 rounded-full">
+              <MapPin className="text-purple-900" />
+            </div>
+            <div>
+              <p className="text-white font-semibold">Location</p>
+              <p className="text-gray-300">Kolkata, India</p>
+            </div>
+          </div>
+          
+          {/* Social Links */}
+          <div className="flex space-x-6 pt-4 justify-center lg:justify-start">
+            <a 
+              href="https://linkedin.com/in/aniket-professional2025" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              // Added cursor-pointer to social link
+              className="text-white hover:text-yellow-300 transition-colors transform hover:scale-110 cursor-pointer"
+            >
+              <Linkedin size={36} />
+            </a>
+            <a 
+              href="https://github.com/aniket-professional2025" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              // Added cursor-pointer to social link
+              className="text-white hover:text-yellow-300 transition-colors transform hover:scale-110 cursor-pointer"
+            >
+              <Github size={36} />
+            </a>
           </div>
         </div>
 
-        <div className="lg:col-span-2 bg-purple-800 bg-opacity-40 rounded-2xl p-8 shadow-2xl backdrop-blur-sm">
-          <h3 className="text-3xl font-semibold text-yellow-300 mb-6">Send a Message</h3>
+        {/* Contact Form */}
+        <div className="lg:col-span-2 bg-purple-800 bg-opacity-40 p-8 rounded-2xl shadow-2xl backdrop-blur-sm">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label className="block text-white mb-2 font-medium">Your Name</label>
+              <label className="block text-white mb-2 font-medium">Name</label>
               <input
                 type="text"
                 value={formData.name}
@@ -59,7 +95,7 @@ export default function Contact() {
               />
             </div>
             <div>
-              <label className="block text-white mb-2 font-medium">Your Email</label>
+              <label className="block text-white mb-2 font-medium">Email</label>
               <input
                 type="email"
                 value={formData.email}
@@ -82,7 +118,8 @@ export default function Contact() {
             </div>
             <button
               type="submit"
-              className="w-full md:w-auto flex items-center justify-center px-6 py-3 bg-yellow-300 text-purple-900 font-bold rounded-xl shadow-lg hover:bg-yellow-400 transition-all"
+              // Added cursor-pointer to the submit button
+              className="w-full md:w-auto flex items-center justify-center px-6 py-3 bg-yellow-300 text-purple-900 font-bold rounded-xl shadow-lg hover:bg-yellow-400 transition-all cursor-pointer"
             >
               Send Message <Send className="ml-2 h-5 w-5" />
             </button>

@@ -1,7 +1,7 @@
 // Projects Component: New Code
 
 import React from 'react';
-import { Brain, Code, Cpu } from 'lucide-react';
+import { Brain, Code, Cpu, Github } from 'lucide-react';
 
 export default function Projects() {
   const projects = [
@@ -25,17 +25,17 @@ export default function Projects() {
       id: 3,
       icon: <Cpu className="text-purple-900" size={32} />,
       title: "Cluad Website Builder",
-      description: "A Gen AI projkect that builds modern websites with codes using Claud Sonnet based on user prompt",
-      technologies: ["Python", "Scikit-Claud-Sonnet", "Prompt Engineering", "Streamlit"],
-      githubUrl: "https://github.com/aniket-professional2025/Claud_Website_Builder"
+      description: "A Gen AI projkect that builds modern websites with Gen AI on command",
+      technologies: ["Python", "Gemini", "Streamlit", "HTML", "CSS"],
+      githubUrl: "https://github.com/aniket-professional2025/Claub-Webite-Builder"
     },
     {
-      id: 4,
-      icon: <Brain className="text-purple-900" size={32} />,
-      title: "Human Movement Tracking",
-      description: "Developed an system to track human movement using meta's Segment Anything Model 2 along with COCO dataset",
-      technologies: ["Python", "SAM", "OpenCV", "PIL", "COCO", "Key Points"],
-      githubUrl: "https://github.com/aniket-professional2025/SAM2_Human_Video_Tracking"
+     id: 4,
+     icon: <Brain className="text-purple-900" size={32} />,
+     title: "Human Movement Tracking",
+     description: "Developed an system to track human movement using meta's Segment Anything Model 2 along with COCO dataset",
+     technologies: ["Python", "SAM", "OpenCV", "PIL", "COCO", "Key Points"],
+     githubUrl: "https://github.com/aniket-professional2025/SAM2_Human_Video_Tracking"
     },
     {
       id: 5,
@@ -82,7 +82,7 @@ export default function Projects() {
   return (
     <div className="container mx-auto px-4 py-12 max-w-7xl">
       <h2 className="text-5xl font-bold text-yellow-300 text-center mb-4">
-        My Projects
+        Projects
       </h2>
       <p className="text-white text-xl text-center mb-12">
         Showcasing my work in AI/ML development and research
@@ -111,9 +111,11 @@ export default function Projects() {
               href={project.githubUrl} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-yellow-300 hover:text-white font-semibold transition-colors inline-block"
+              // Added cursor-pointer to the GitHub link
+              className="inline-flex items-center text-yellow-300 font-semibold hover:text-yellow-400 transition-colors duration-300 cursor-pointer"
             >
-              View Details →
+              <Github className="mr-2" size={20} />
+              View on GitHub
             </a>
           </div>
         ))}

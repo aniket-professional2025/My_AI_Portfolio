@@ -10,21 +10,24 @@ export default function Certificates() {
       title: 'Deep Learning Specialization',
       issuer: 'Coursera (DeepLearning.AI)',
       date: 'Dec 2023',
-      technologies: ['TensorFlow', 'Keras', 'CNN', 'RNN']
+      technologies: ['TensorFlow', 'Keras', 'CNN', 'RNN'],
+      linkUrl: '#' // Added dummy link
     },
     {
       id: 2,
       title: 'Machine Learning Engineering for Production',
       issuer: 'Coursera (DeepLearning.AI)',
       date: 'Aug 2023',
-      technologies: ['MLOps', 'AWS', 'Docker', 'Kubernetes']
+      technologies: ['MLOps', 'AWS', 'Docker', 'Kubernetes'],
+      linkUrl: '#' // Added dummy link
     },
     {
       id: 3,
       title: 'AWS Certified Machine Learning',
       issuer: 'Amazon Web Services',
       date: 'Apr 2023',
-      technologies: ['SageMaker', 'S3', 'EC2']
+      technologies: ['SageMaker', 'S3', 'EC2'],
+      linkUrl: '#' // Added dummy link
     }
   ];
 
@@ -52,11 +55,20 @@ export default function Certificates() {
             <p className="text-yellow-300 font-semibold mb-3">{cert.date}</p>
             <div className="flex flex-wrap gap-2">
               {cert.technologies.map((tech) => (
-                <span key={tech} className="bg-purple-900 text-yellow-300 px-3 py-1 rounded-full text-sm font-medium">
+                <span key={tech} className="bg-purple-900 text-yellow-300 px-3 py-1 rounded-full text-sm">
                   {tech}
                 </span>
               ))}
             </div>
+            {/* Added a link button here and included cursor-pointer */}
+            <a 
+              href={cert.linkUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center text-purple-900 bg-yellow-300 px-4 py-2 rounded-full font-bold hover:bg-yellow-400 transition-colors duration-300 cursor-pointer"
+            >
+              View Credential <Link className="ml-2 h-5 w-5" />
+            </a>
           </div>
         ))}
       </div>

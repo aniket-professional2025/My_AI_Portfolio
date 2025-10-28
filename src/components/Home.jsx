@@ -29,7 +29,8 @@ export default function Home({ handleNavClick }) {
         </p>
         <button
           onClick={() => handleNavClick('about')}
-          className="mt-8 bg-yellow-300 text-purple-900 px-8 py-4 rounded-full text-lg font-bold hover:bg-yellow-400 transition-all duration-300 transform hover:scale-105 shadow-lg"
+          // Added cursor-pointer
+          className="mt-8 bg-yellow-300 text-purple-900 font-bold py-3 px-8 rounded-full shadow-2xl hover:bg-yellow-400 transition-all transform hover:scale-105 cursor-pointer"
         >
           Learn More About Me
         </button>
