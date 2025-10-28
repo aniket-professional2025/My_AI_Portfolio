@@ -28,13 +28,13 @@ export default function Navbar({ activeSection, handleNavClick, mobileMenuOpen, 
         </div>
 
         {/* ✅ Desktop Navigation with Glassmorphism (visible from md breakpoint) */}
-        <div className="hidden md:flex items-center gap-6 px-6 py-3 rounded-2xl bg-purple-500 bg-opacity-10 backdrop-blur-md border border-purple-400 border-opacity-30 shadow-x1">
+        <div className="hidden md:flex items-center gap-6 px-6 py-3 rounded-2xl bg-purple-400 bg-opacity-20 backdrop-blur-md border border-white border-opacity-20 shadow-2xl">
           {navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => handleNavClick(item.id)}
-              className={`relative text-lg font-medium whitespace-nowrap group ${
-                activeSection === item.id ? 'text-yellow-400' : 'text-white-200'
+              className={`relative text-lg font-medium whitespace-nowrap group cursor-pointer ${
+                activeSection === item.id ? 'text-yellow-300' : 'text-white'
               }`}
             >
               <span className="relative inline-block transition-all duration-300 group-hover:text-yellow-300" style={{ 
@@ -80,7 +80,7 @@ export default function Navbar({ activeSection, handleNavClick, mobileMenuOpen, 
                 handleNavClick(item.id);
                 setMobileMenuOpen(false);
               }}
-              className={`text-lg font-medium text-left py-2 px-3 rounded-lg transition-all duration-300 ${
+              className={`text-lg font-medium text-left py-2 px-3 rounded-lg transition-all duration-300 cursor-pointer ${
                 activeSection === item.id
                   ? 'text-yellow-300 bg-purple-700 bg-opacity-30'
                   : 'text-white hover:bg-purple-700 hover:bg-opacity-25 hover:text-yellow-300'
