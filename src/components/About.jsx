@@ -27,10 +27,10 @@ export default function About() {
         </div>
 
         {/* Name with Animation */}
-        <h3 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-linear-to-r from-yellow-300 via-yellow-200 to-yellow-300 mb-2 animate-gradient">
+        <h3 className="text-4xl md:text-4xl font-bold text-transparent bg-clip-text bg-linear-to-r from-yellow-300 via-yellow-200 to-yellow-300 mb-2 animate-gradient">
           Aniket Chakraborty
         </h3>
-        <p className="text-xl text-yellow-300 font-semibold opacity-90">
+        <p className="text-2xl text-yellow-300 font-semibold opacity-90">
           AI/ML Professional
         </p>
       </div>

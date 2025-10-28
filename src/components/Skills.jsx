@@ -65,11 +65,6 @@ export default function Skills() {
                   src={skill.icon} 
                   alt={skill.name}
                   className="w-16 h-16 md:w-20 md:h-20 object-contain filter drop-shadow-lg transition-all duration-500 group-hover:drop-shadow-2xl group-hover:brightness-110"
-                  onError={(e) => {
-                    // Fallback if image doesn't load
-                    e.target.style.display = 'none';
-                    e.target.nextSibling.style.display = 'flex';
-                  }}
                 />
                 {/* Fallback text if image fails to load */}
                 <div className="hidden text-yellow-300 text-2xl font-bold items-center justify-center w-full h-full">
