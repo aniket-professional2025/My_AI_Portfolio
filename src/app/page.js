@@ -21,7 +21,7 @@ export default function Portfolio() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowWelcome(false), 0);
+    const timer = setTimeout(() => setShowWelcome(false), 1500);
     return () => clearTimeout(timer);
   }, []);
 
@@ -57,7 +57,7 @@ export default function Portfolio() {
 
   return (
     <div className="bg-linear-to-br from-purple-900 via-purple-700 to-purple-500">
-      {/* {showWelcome && <Welcome />} */}
+      {showWelcome && <Welcome />}
 
       {!showWelcome && (
         <>
