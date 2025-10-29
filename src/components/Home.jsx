@@ -55,7 +55,7 @@ export default function Home({ handleNavClick }) {
       }}
     >
       {/* Dark overlay for better text readability */}
-      <div className="absolute inset-0 ffbg-black backdrop-blur-[3px] bg-opacity-40"></div>
+      <div className="absolute inset-0 backdrop-blur-[3px] bg-opacity-40"></div>
       
       <div className="text-center space-y-8 relative z-10">
         <div className="min-h-[180px] md:min-h-60">
