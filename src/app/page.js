@@ -72,27 +72,27 @@ export default function Portfolio() {
             <Home handleNavClick={handleNavClick} />
           </section>
 
-          <section id="about" className="min-h-screen pt-20">
+          <section id="about" className="h-[190vh] pt-20">
             <About />
           </section>
           
-          <section id="skills" className="h-[70vh] pt-20">
+          <section id="skills" className="h-[50vh] pt-20">
             <Skills />
           </section>
 
-          <section id="projects" className="min-h-screen pt-20">
+          <section id="projects" className="h-[200vh] pt-20">
             <Projects />
           </section>
 
-          <section id="education" className="min-h-screen pt-20">
+          <section id="education" className="h-[100vh] pt-20">
             <Education />
           </section>
 
-          <section id="internship" className="min-h-screen pt-20">
+          <section id="internship" className="h-[110vh] pt-20">
             <Internship />
           </section>
 
-          <section id="certificates" className="min-h-screen pt-20">
+          <section id="certificates" className="h-[10h] pt-20">
             <Certificates />
           </section>
 

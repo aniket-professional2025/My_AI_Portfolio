@@ -25,14 +25,14 @@ export default function Navbar({
       <div className="container mx-auto px-4 py-4 flex items-center justify-between relative">
         {/* Logo */}
         <div
-          className="text-3xl font-bold text-yellow-300 cursor-pointer select-none"
+          className="text-3xl font-bold text-yellow-300 select-none"
           onClick={() => handleNavClick("home")}
         >
           A(I)niket
         </div>
 
         {/* ✅ Centered Desktop Navigation (Glassmorphic container) */}
-        <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center gap-8 px-10 py-3 rounded-2xl backdrop-blur-md">
+        <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center gap-8 px-20 py-5 rounded-2xl backdrop-blur-md">
           {navItems.map((item) => (
             <button
               key={item.id}
@@ -82,10 +82,10 @@ export default function Navbar({
                 handleNavClick(item.id);
                 setMobileMenuOpen(false);
               }}
-              className={`text-lg font-medium text-left py-2 px-3 rounded-lg transition-all duration-300 cursor-pointer ${
+              className={`relative text-lg font-medium whitespace-nowrap group cursor-pointer transition-all duration-300 cursor-pointer ${
                 activeSection === item.id
-                  ? "text-yellow-300 bg-white/10"
-                  : "text-white hover:bg-white/10 hover:text-yellow-300"
+                  ? "text-yellow-300"
+                  : "text-white hover:text-yellow-300 hover:blur-[0.3px]"
               }`}
             >
               {item.label}
