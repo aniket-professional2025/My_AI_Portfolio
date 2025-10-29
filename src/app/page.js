@@ -74,7 +74,7 @@ export default function Portfolio() {
           {/* About Section */}
           <section
             id="about"
-            className="h-[190vh] pt-20 bg-linear-to-br from-purple-900 via-purple-700 to-purple-500"
+            className="h-[190vh] pt-20 bg-linear-to-br bg-purple-500"
           >
             <About />
           </section>
@@ -82,7 +82,7 @@ export default function Portfolio() {
           {/* Skills Section */}
           <section
             id="skills"
-            className="h-[50vh] pt-20 bg-linear-to-br from-indigo-900 via-indigo-700 to-indigo-500"
+            className="h-[50vh] pt-20 bg-linear-to-br bg-purple-500"
           >
             <Skills />
           </section>
@@ -90,7 +90,7 @@ export default function Portfolio() {
           {/* Projects Section */}
           <section
             id="projects"
-            className="h-[200vh] pt-20 bg-linear-to-br from-fuchsia-900 via-pink-700 to-rose-500"
+            className="h-[200vh] pt-20 bg-linear-to-br bg-purple-500"
           >
             <Projects />
           </section>
@@ -98,7 +98,7 @@ export default function Portfolio() {
           {/* Education Section */}
           <section
             id="education"
-            className="h-screen pt-20 bg-linear-to-br from-blue-900 via-blue-700 to-blue-500"
+            className="h-screen pt-20 bg-linear-to-br bg-purple-500"
           >
             <Education />
           </section>
@@ -106,7 +106,7 @@ export default function Portfolio() {
           {/* Internship Section */}
           <section
             id="internship"
-            className="h-[110vh] pt-20 bg-linear-to-br from-emerald-900 via-emerald-700 to-emerald-500"
+            className="h-[110vh] pt-20 bg-linear-to-br bg-purple-500"
           >
             <Internship />
           </section>
@@ -114,7 +114,7 @@ export default function Portfolio() {
           {/* Certificates Section */}
           <section
             id="certificates"
-            className="h-[101vh] pt-20 bg-linear-to-br from-violet-900 via-violet-700 to-violet-500"
+            className="h-[101vh] pt-20 bg-linear-to-br bg-purple-500"
           >
             <Certificates />
           </section>
@@ -122,7 +122,7 @@ export default function Portfolio() {
           {/* Contact Section */}
           <section
             id="contact"
-            className="min-h-screen pt-20 bg-linear-to-br from-gray-900 via-gray-800 to-gray-700"
+            className="min-h-screen pt-20 bg-linear-to-br bg-purple-500"
           >
             <Contact />
           </section>
