@@ -1,6 +1,7 @@
 // About Component: New Code
 
 import React from 'react';
+import Image from 'next/image';
 import { Briefcase, MapPin, Code, Brain, Cpu } from 'lucide-react';
 
 export default function About() {
@@ -18,10 +19,13 @@ export default function About() {
           
           {/* Profile Picture Container */}
           <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-yellow-300 shadow-2xl transform group-hover:scale-105 transition-transform duration-300">
-            <img
-              src="https://raw.githubusercontent.com/aniket-professional2025/aniket-professional2025/main/My_Portfolio_Picture.png" 
+            <Image
+              src="/images/My_Picture.png" 
               alt="Profile" 
+              width={192}
+              height={192}
               className="w-full h-full object-cover"
+              priority
             />
           </div>
         </div>
