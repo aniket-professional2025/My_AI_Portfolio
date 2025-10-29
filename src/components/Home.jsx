@@ -61,7 +61,7 @@ export default function Home({ handleNavClick }) {
       <div className="text-center space-y-8 relative z-10">
         <div className="min-h-[180px] md:min-h-60 lg:mb-20">
           <h1 className="text-5xl md:text-7xl font-bold text-yellow-300 leading-tight">
-            <span className=''>1111{titleText}</span>
+            <span className=''>{titleText}</span>
             {showTitleCursor && (
               <span className="inline-block w-1 h-16 md:h-20 bg-yellow-300 ml-2 animate-pulse"></span>
             )}
