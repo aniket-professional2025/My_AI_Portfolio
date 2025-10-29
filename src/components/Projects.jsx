@@ -24,7 +24,7 @@ export default function Projects() {
     {
       id: 3,
       icon: <Cpu className="text-purple-900" size={32} />,
-      title: "Cluad Website Builder",
+      title: "Claud Website Builder",
       description: "A Gen AI project that builds modern websites with Gen AI on user text prompt. Try to create clone of Lovable",
       technologies: ["Python", "Claud Sonnet", "Streamlit", "Web Understanding", "Prompt Engineering"],
       githubUrl: "https://github.com/aniket-professional2025/Claub-Webite-Builder"

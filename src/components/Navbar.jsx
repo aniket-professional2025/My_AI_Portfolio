@@ -21,7 +21,7 @@ export default function Navbar({
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-linear-to-r from-purple-800/40 to-indigo-900/40 backdrop-blur-lg border-b border-white/20 shadow-lg">
+    <nav className="sticky top-0 left-0 right-0 z-50 bg-linear-to-r from-purple-800/40 to-indigo-900/40 backdrop-blur-lg border-b border-white/20 shadow-lg">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between relative">
         {/* Logo */}
         <div

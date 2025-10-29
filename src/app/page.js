@@ -67,7 +67,7 @@ export default function Portfolio() {
           />
 
           {/* Home - No background (uses its own image from Home.jsx) */}
-          <section id="home" className="h-screen pt-20">
+          <section id="home" className="h-screen">
             <Home handleNavClick={handleNavClick} />
           </section>
 
