@@ -68,7 +68,7 @@ export default function Portfolio() {
             setMobileMenuOpen={setMobileMenuOpen}
           />
 
-          <section id="home" className="h-[90vh] pt-20"> 
+          <section id="home" className="h-screen pt-20"> 
             <Home handleNavClick={handleNavClick} />
           </section>
 
@@ -84,7 +84,7 @@ export default function Portfolio() {
             <Projects />
           </section>
 
-          <section id="education" className="h-[100vh] pt-20">
+          <section id="education" className="h-screen pt-20">
             <Education />
           </section>
 

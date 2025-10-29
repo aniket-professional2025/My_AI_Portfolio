@@ -82,7 +82,7 @@ export default function Navbar({
                 handleNavClick(item.id);
                 setMobileMenuOpen(false);
               }}
-              className={`relative text-lg font-medium whitespace-nowrap group cursor-pointer transition-all duration-300 cursor-pointer ${
+              className={`relative text-lg font-medium whitespace-nowrap group cursor-pointer transition-all duration-300 ${
                 activeSection === item.id
                   ? "text-yellow-300"
                   : "text-white hover:text-yellow-300 hover:blur-[0.3px]"
