@@ -1,5 +1,4 @@
-// Main Portfolio Component: New Code
-
+// The Page.js: New Code
 "use client";
 import React, { useState, useEffect } from 'react';
 
@@ -29,11 +28,11 @@ export default function Portfolio() {
     const observerOptions = {
       root: null,
       rootMargin: '-50% 0px -50% 0px',
-      threshold: 0
+      threshold: 0,
     };
 
     const observerCallback = (entries) => {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setActiveSection(entry.target.id);
         }
@@ -41,9 +40,8 @@ export default function Portfolio() {
     };
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
-    
     const sections = document.querySelectorAll('section[id]');
-    sections.forEach(section => observer.observe(section));
+    sections.forEach((section) => observer.observe(section));
 
     return () => observer.disconnect();
   }, [showWelcome]);
@@ -56,7 +54,7 @@ export default function Portfolio() {
   };
 
   return (
-    <div className="bg-linear-to-br from-purple-900 via-purple-700 to-purple-500">
+    <div className="w-full min-h-screen">
       {showWelcome && <Welcome />}
 
       {!showWelcome && (
@@ -68,35 +66,64 @@ export default function Portfolio() {
             setMobileMenuOpen={setMobileMenuOpen}
           />
 
-          <section id="home" className="h-screen pt-20"> 
+          {/* Home - No background (uses its own image from Home.jsx) */}
+          <section id="home" className="h-screen pt-20">
             <Home handleNavClick={handleNavClick} />
           </section>
 
-          <section id="about" className="h-[190vh] pt-20">
+          {/* About Section */}
+          <section
+            id="about"
+            className="h-[190vh] pt-20 bg-linear-to-br from-purple-900 via-purple-700 to-purple-500"
+          >
             <About />
           </section>
-          
-          <section id="skills" className="h-[50vh] pt-20">
+
+          {/* Skills Section */}
+          <section
+            id="skills"
+            className="h-[50vh] pt-20 bg-linear-to-br from-indigo-900 via-indigo-700 to-indigo-500"
+          >
             <Skills />
           </section>
 
-          <section id="projects" className="h-[200vh] pt-20">
+          {/* Projects Section */}
+          <section
+            id="projects"
+            className="h-[200vh] pt-20 bg-linear-to-br from-fuchsia-900 via-pink-700 to-rose-500"
+          >
             <Projects />
           </section>
 
-          <section id="education" className="h-screen pt-20">
+          {/* Education Section */}
+          <section
+            id="education"
+            className="h-screen pt-20 bg-linear-to-br from-blue-900 via-blue-700 to-blue-500"
+          >
             <Education />
           </section>
 
-          <section id="internship" className="h-[110vh] pt-20">
+          {/* Internship Section */}
+          <section
+            id="internship"
+            className="h-[110vh] pt-20 bg-linear-to-br from-emerald-900 via-emerald-700 to-emerald-500"
+          >
             <Internship />
           </section>
 
-          <section id="certificates" className="h-[10h] pt-20">
+          {/* Certificates Section */}
+          <section
+            id="certificates"
+            className="h-[101vh] pt-20 bg-linear-to-br from-violet-900 via-violet-700 to-violet-500"
+          >
             <Certificates />
           </section>
 
-          <section id="contact" className="min-h-screen pt-20">
+          {/* Contact Section */}
+          <section
+            id="contact"
+            className="min-h-screen pt-20 bg-linear-to-br from-gray-900 via-gray-800 to-gray-700"
+          >
             <Contact />
           </section>
         </>
