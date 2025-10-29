@@ -57,7 +57,7 @@ export default function Portfolio() {
 
   return (
     <div className="bg-linear-to-br from-purple-900 via-purple-700 to-purple-500">
-      {showWelcome && <Welcome />}
+      {/* {showWelcome && <Welcome />} */}
 
       {!showWelcome && (
         <>
