@@ -52,6 +52,7 @@ export default function Home({ handleNavClick }) {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
+        
       }}
     >
       {/* Dark overlay for better text readability */}
@@ -65,9 +66,8 @@ export default function Home({ handleNavClick }) {
               <span className="inline-block w-1 h-16 md:h-20 bg-yellow-300 ml-2 animate-pulse"></span>
             )}
           </h1>
-        </div>
-        
-        <div className="min-h-[60px] md:min-h-20">
+
+            <div className=" md:min-h-20">
           <p className="text-2xl md:text-3xl text-white font-light">
             {subtitleText}
             {showSubtitleCursor && (
@@ -75,7 +75,9 @@ export default function Home({ handleNavClick }) {
             )}
           </p>
         </div>
-        
+
+
+        </div>  
         <div 
           className={`transition-opacity duration-1000 ${
             showContent ? 'opacity-100' : 'opacity-0'

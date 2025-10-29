@@ -32,7 +32,7 @@ export default function Navbar({
         </div>
 
         {/* ✅ Centered Desktop Navigation (Glassmorphic container) */}
-        <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center gap-8 px-20 py-5 rounded-2xl backdrop-blur-md">
+        <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center gap-8 px-20 py-5  ">
           {navItems.map((item) => (
             <button
               key={item.id}
